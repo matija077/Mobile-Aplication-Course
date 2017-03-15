@@ -19,7 +19,8 @@
         android:layout_weight="0.1"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        android:background="@color/colorPrimaryDark">
     </LinearLayout>
 
     <LinearLayout
