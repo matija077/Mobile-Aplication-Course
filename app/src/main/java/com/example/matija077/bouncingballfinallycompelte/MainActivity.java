@@ -95,11 +95,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        myBounceView.setBallInWallListener(new BounceView.ballInWallListener() {
+        /*myBounceView.setBallInWallListener(new BounceView.ballInWallListener() {
             @Override
             public void onBallInWall(String input) {
                 if (input == "wall") {
                     liveLost();
+                }
+            }
+        });*/
+
+        myBounceView.setCollisionListener(new BounceView.collisionListener() {
+            @Override
+            public void onCollision(String cause) {
+                if (cause.equals("wall")) {
+                    liveLost();;
+                } else if (cause.equals("obstacle")) {
+
                 }
             }
         });
@@ -272,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             checkLevel();
             showTime();
-            myBounceView.moveBall();
+            myBounceView.moveBall(time);
 
             if (!liveJustLost) {
                 time += FRAME_RATE;
